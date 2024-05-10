@@ -1,0 +1,20 @@
+[2024-04-23T15:14:05.575+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-23T15:14:05.603+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: model_pipeline.train_model manual__2024-04-23T15:13:50.352085+00:00 [queued]>
+[2024-04-23T15:14:05.615+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: model_pipeline.train_model manual__2024-04-23T15:13:50.352085+00:00 [queued]>
+[2024-04-23T15:14:05.616+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-23T15:14:05.633+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): train_model> on 2024-04-23 15:13:50.352085+00:00
+[2024-04-23T15:14:05.647+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1201) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-23T15:14:05.649+0000] {standard_task_runner.py:63} INFO - Started process 1210 to run task
+[2024-04-23T15:14:05.650+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'model_pipeline', 'train_model', 'manual__2024-04-23T15:13:50.352085+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpzn9h_oup']
+[2024-04-23T15:14:05.652+0000] {standard_task_runner.py:91} INFO - Job 116: Subtask train_model
+[2024-04-23T15:14:05.715+0000] {task_command.py:426} INFO - Running <TaskInstance: model_pipeline.train_model manual__2024-04-23T15:13:50.352085+00:00 [running]> on host ec31c9b90297
+[2024-04-23T15:14:05.846+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='model_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2024-04-23T15:13:50.352085+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-23T15:13:50.352085+00:00'
+[2024-04-23T15:14:05.848+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-23T15:16:51.107+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-23T15:16:51.109+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-23T15:16:51.121+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=model_pipeline, task_id=train_model, execution_date=20240423T151350, start_date=20240423T151405, end_date=20240423T151651
+[2024-04-23T15:16:51.189+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-23T15:16:51.221+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-23T15:16:51.224+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

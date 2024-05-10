@@ -1,0 +1,43 @@
+[2024-05-02T13:21:48.670+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-02T13:21:48.696+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: model_pipeline.evaluate_model manual__2024-05-02T13:18:25.058795+00:00 [queued]>
+[2024-05-02T13:21:48.706+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: model_pipeline.evaluate_model manual__2024-05-02T13:18:25.058795+00:00 [queued]>
+[2024-05-02T13:21:48.707+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-05-02T13:21:48.724+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): evaluate_model> on 2024-05-02 13:18:25.058795+00:00
+[2024-05-02T13:21:48.735+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=179) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-02T13:21:48.737+0000] {standard_task_runner.py:63} INFO - Started process 188 to run task
+[2024-05-02T13:21:48.738+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'model_pipeline', 'evaluate_model', 'manual__2024-05-02T13:18:25.058795+00:00', '--job-id', '231', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpfevuvuup']
+[2024-05-02T13:21:48.740+0000] {standard_task_runner.py:91} INFO - Job 231: Subtask evaluate_model
+[2024-05-02T13:21:48.795+0000] {task_command.py:426} INFO - Running <TaskInstance: model_pipeline.evaluate_model manual__2024-05-02T13:18:25.058795+00:00 [running]> on host 3d39ed9c66c5
+[2024-05-02T13:21:48.907+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='model_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_model' AIRFLOW_CTX_EXECUTION_DATE='2024-05-02T13:18:25.058795+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-02T13:18:25.058795+00:00'
+[2024-05-02T13:21:48.909+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-02T13:21:50.744+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but RandomForestClassifier was fitted with feature names
+  warnings.warn(
+
+[2024-05-02T13:21:52.967+0000] {ml_pipeline_dag.py:113} INFO - Accuracy: 0.6409
+Precision: 0.6259898864612156
+Recall: 0.6679222233533544
+F1 Score: 0.6462765957446809
+[2024-05-02T13:21:53.425+0000] {logging_mixin.py:188} WARNING - 2024/05/02 13:21:53 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2024-05-02T13:21:53.541+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-02T13:21:53.542+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-02T13:21:53.553+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=model_pipeline, task_id=evaluate_model, execution_date=20240502T131825, start_date=20240502T132148, end_date=20240502T132153
+[2024-05-02T13:21:53.636+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-02T13:21:53.662+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-02T13:21:53.665+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
